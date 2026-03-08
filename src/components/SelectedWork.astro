@@ -1,0 +1,68 @@
+---
+// TODO: Replace '#' with actual project URLs
+const projects = [
+  {
+    number: '01',
+    title: 'CYA Studio',
+    tags: ['React', 'TypeScript', 'Supabase', 'Framer Motion'],
+    year: '2025',
+    url: 'https://www.cyastudio.com/',
+    i18nKey: 'project0',
+  },
+  {
+    number: '02',
+    title: 'AI Staging Hub',
+    tags: ['Astro', 'React', 'Tailwind', 'Framer Motion'],
+    year: '2025',
+    url: 'https://aistaginghub.com/',
+    i18nKey: 'project1',
+  },
+  {
+    number: '03',
+    title: 'Google Maps Lead Scraper',
+    tags: ['NestJS', 'React', 'OpenAI API', 'Apify'],
+    year: '2025',
+    url: 'https://github.com/lilivin/google-maps-scrapper',
+    i18nKey: 'project2',
+  },
+];
+---
+
+<section class="px-6 py-24 max-w-7xl mx-auto">
+  <div class="flex items-end justify-between mb-16 border-b border-gray-200 dark:border-neutral-800 pb-8">
+    <h2 class="text-xs font-mono text-gray-500 dark:text-neutral-500 tracking-widest uppercase" data-i18n="selectedWork.label">Selected Work</h2>
+    <span class="text-xs font-mono text-gray-500 dark:text-neutral-500" data-i18n="selectedWork.count">03 projects</span>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-gray-200 dark:bg-neutral-800">
+    {projects.map((project) => (
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="group bg-white dark:bg-neutral-950 p-8 flex flex-col gap-6 hover:bg-gray-50 dark:hover:bg-neutral-900 transition-colors duration-300"
+      >
+        <div class="flex items-start justify-between">
+          <span class="text-xs font-mono text-gray-500 dark:text-neutral-500">{project.number}</span>
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-mono text-gray-500 dark:text-neutral-500">{project.year}</span>
+            <span class="text-xs text-gray-400 dark:text-neutral-600 translate-y-px group-hover:text-black dark:group-hover:text-white group-hover:-translate-y-px group-hover:translate-x-px transition-all duration-200">↗</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-2xl font-black tracking-tighter text-black dark:text-white mb-1 group-hover:underline underline-offset-4 decoration-1">{project.title}</h3>
+          <p class="text-sm text-gray-500 dark:text-neutral-400" data-i18n={`selectedWork.${project.i18nKey}.subtitle`}>—</p>
+        </div>
+
+        <p class="text-sm text-gray-500 dark:text-neutral-400 leading-relaxed flex-1" data-i18n={`selectedWork.${project.i18nKey}.desc`}>—</p>
+
+        <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-200 dark:border-neutral-800">
+          {project.tags.map((tag) => (
+            <span class="text-xs font-mono text-gray-500 dark:text-neutral-500 border border-gray-200 dark:border-neutral-700 px-2 py-1">{tag}</span>
+          ))}
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

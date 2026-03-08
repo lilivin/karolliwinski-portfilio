@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="min-h-screen flex flex-col px-6 max-w-7xl mx-auto">
+  <div class="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-8 items-end pt-32">
+
+    <!-- Left: text -->
+    <div class="pb-16 lg:pb-24 flex flex-col justify-end">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-black dark:text-white leading-[0.95] mb-8">
+        <span data-i18n="hero.headlineMain">Fullstack Developer</span><br />
+        <span class="text-gray-500 dark:text-neutral-500" data-i18n="hero.headlineAccent">with GenAI</span>
+      </h1>
+
+      <p class="text-lg md:text-xl text-gray-500 dark:text-neutral-400 leading-relaxed max-w-xl mb-12" data-i18n="hero.subtitle">
+        6 years of commercial experience delivering high-performance applications
+        for global leaders like Deloitte. Remote-first, results-driven.
+      </p>
+
+      <a
+        href="#contact"
+        class="self-start inline-flex items-center gap-3 border border-black dark:border-white text-black dark:text-white px-8 py-4 text-sm font-medium tracking-wider uppercase hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-300"
+        data-i18n="hero.cta"
+      >
+        Get in touch
+      </a>
+    </div>
+
+    <!-- Right: photo -->
+    <div class="hidden lg:flex items-end justify-end pb-0">
+      <Image
+        src="/images/profile-photo.png"
+        alt="Karol Liwiński"
+        width={600}
+        height={900}
+        class="max-h-[78vh] w-auto object-contain object-bottom"
+        loading="eager"
+      />
+    </div>
+  </div>
+
+  <!-- Tags bar -->
+  <div class="border-t border-gray-200 dark:border-neutral-800 pt-8 pb-16 flex flex-wrap gap-8 text-xs font-mono text-gray-500 dark:text-neutral-500 tracking-wider">
+    <span data-i18n="hero.tag0">Fullstack Development</span>
+    <span data-i18n="hero.tag1">GenAI Integration</span>
+    <span data-i18n="hero.tag2">React / Next.js</span>
+    <span data-i18n="hero.tag3">Node.js / Python</span>
+    <span data-i18n="hero.tag4">Remote Collaboration</span>
+  </div>
+</section>

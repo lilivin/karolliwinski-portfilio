@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/700.css";
+@import "@fontsource/inter/900.css";
+@import "@fontsource/jetbrains-mono/400.css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: "Inter", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  html.dark {
+    background-color: #0a0a0a;
+    color: #ffffff;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
